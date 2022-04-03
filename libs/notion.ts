@@ -74,7 +74,7 @@ export class Notion {
     }
 
     async insertPage(repo: Repo) {
-        if (repo.description.length >= 2000) {
+        if (repo.description && repo.description.length >= 2000) {
             repo.description = ''
         }
         const data = await this.notion.pages.create({
